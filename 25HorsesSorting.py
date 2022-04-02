@@ -17,7 +17,7 @@ for x in range(Shape[0]):
         Competitors[x,y] = f'{random.random():.4f}'
 print("25 horses into 5 groups:")
 for x in range(5):
-  print(Competitors[x]) 
+  print(Competitors[x])
 
 #Race 1,2,3,4 & 5
 print("Group sort from slower to faster:")

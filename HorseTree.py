@@ -1,6 +1,6 @@
 from Horse import Horse
 
-class Tree:
+class HorseTree:
     def __init__(self, Time, Name):
         self.root = Horse(Time, Name)
 

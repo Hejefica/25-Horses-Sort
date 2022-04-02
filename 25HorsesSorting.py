@@ -16,11 +16,19 @@ gA = [Random(),Random(),Random(),Random(),Random()]
 gB = [Random(),Random(),Random(),Random(),Random()]
 gC = [Random(),Random(),Random(),Random(),Random()]
 gD = [Random(),Random(),Random(),Random(),Random()]
-print("25 horses into 5 groups:", "\n", gA, "\n", gB, "\n", gC, "\n", gD)
+gE = [Random(),Random(),Random(),Random(),Random()]
+print("25 horses into 5 groups:\n", gA, "\n", gB, "\n", gC, "\n", gD, "\n", gE)
 
-#Race 1
-gA.sort()
+#Race 1,2,3,4 & 5
+gA.sort() 
 gB.sort()
 gC.sort()
 gD.sort()
-print("Group sort from slower to faster:", "\n", gA, "\n", gB, "\n", gC, "\n", gD)
+gE.sort()
+print("Group sort from slower to faster:\n", gA, "\n", gB, "\n", gC, "\n", gD, "\n", gE)
+
+#Race 6
+gSort = [gA[4],gB[4],gC[4],gD[4],gE[4]]
+gSort.sort()
+print("1st Place:", gSort[4])
+

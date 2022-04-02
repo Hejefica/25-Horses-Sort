@@ -25,8 +25,15 @@ for x in range(5):
   Competitors[x].sort() 
   print(Competitors[x]) 
   
-
 #Race 6
-gSort = [Competitors[0,4], Competitors[1,4], Competitors[2,4], Competitors[3,4], Competitors[4,4]]
-gSort.sort()
-print("1st Place:", gSort[4])
+print("Group sort fastest of the fastest:")
+R6 = Competitors[np.argsort(Competitors[:,-1])]
+for x in range(5):
+  print(R6[x]) 
+print("First place horse: ", R6[4,4])
+
+#Race 7
+R7 = [R6[2,4], R6[3,4], R6[3,3], R6[4,3], R6[4,2]]
+R7.sort()
+print ("Second place horse: ", R7[4])
+print ("Third place horse: ", R7[3])

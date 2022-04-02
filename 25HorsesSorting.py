@@ -9,26 +9,24 @@ class Horse:
         self.UpperPosition = UP
         self.LowerPosition = LP
 
-def Random():
-    return f'{random.random():.4f}'
-
-gA = [Random(),Random(),Random(),Random(),Random()]
-gB = [Random(),Random(),Random(),Random(),Random()]
-gC = [Random(),Random(),Random(),Random(),Random()]
-gD = [Random(),Random(),Random(),Random(),Random()]
-gE = [Random(),Random(),Random(),Random(),Random()]
-print("25 horses into 5 groups:\n", gA, "\n", gB, "\n", gC, "\n", gD, "\n", gE)
+#Competitors Registry
+Competitors = np.zeros((5,5))
+Shape = Competitors.shape
+for x in range(Shape[0]):
+    for y in range (Shape[1]):
+        Competitors[x,y] = f'{random.random():.4f}'
+print("25 horses into 5 groups:")
+for x in range(5):
+  print(Competitors[x]) 
 
 #Race 1,2,3,4 & 5
-gA.sort() 
-gB.sort()
-gC.sort()
-gD.sort()
-gE.sort()
-print("Group sort from slower to faster:\n", gA, "\n", gB, "\n", gC, "\n", gD, "\n", gE)
+print("Group sort from slower to faster:")
+for x in range(5):
+  Competitors[x].sort() 
+  print(Competitors[x]) 
+  
 
 #Race 6
-gSort = [gA[4],gB[4],gC[4],gD[4],gE[4]]
+gSort = [Competitors[0,4], Competitors[1,4], Competitors[2,4], Competitors[3,4], Competitors[4,4]]
 gSort.sort()
 print("1st Place:", gSort[4])
-

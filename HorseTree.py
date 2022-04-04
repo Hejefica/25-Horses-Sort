@@ -21,6 +21,16 @@ class HorseTree:
             self.__OrderRecursive(Node.Right)
             print(Node.Name, ": ", Node.Time)
             self.__OrderRecursive(Node.Left)
+    
+    def __Search(self, node, Time):
+        if node is None:
+            return None
+        if node.Time == Time:
+            return node
+        if Time < node.Time:
+            return self.__Search(node.Left, Time)
+        else:
+            return self.__Search(node.Right, Time)
 
     def Add(self, Time, Name):
         self.__RecursiveAddition(self.root, Time, Name)
@@ -29,3 +39,6 @@ class HorseTree:
         print("Ordered Horse Tree: ")
         self.__OrderRecursive(self.root)
         print("")
+
+    def Search(self, Time):
+        return self.__Search(self.root, Time)

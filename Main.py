@@ -1,10 +1,10 @@
 import random
 #import string
 import numpy as np
-import os, sys
-import networkx as nx
-import graphviz
-import pylab
+#import os, sys
+#import networkx as nx
+#import graphviz
+#import pylab
 #import matplotlib.pyplot as plt
 from HorseTree import HorseTree
 
@@ -42,6 +42,10 @@ print("Race 7:", R7, "\n")
 print ("Second place horse: ", int(R7[4]), "pts")
 print ("Third place horse: ", int(R7[3]), "pts\n")
 
+ConcatenatedArray = np.concatenate(R6)
+ConcatenatedArray.sort()
+print(ConcatenatedArray)
+
 HorseTree = HorseTree(int(R6[0, 0]), "Horse 1")
 HorseTree.Add(int(R6[0, 1]), "Horse 2")
 HorseTree.Add(int(R6[0, 2]), "Horse 3")
@@ -76,3 +80,5 @@ for x in range(Shape[0]):
             x += 1"""
 
 HorseTree.OrderedPrint()
+TEST=HorseTree.Search(R6[3, 4])
+print(TEST.Time,TEST.Name)

@@ -1,44 +1,44 @@
 from Horse import Horse
 
 class HorseTree:
-    def __init__(self, Time, Name):
-        self.root = Horse(Time, Name)
+    def __init__(self, Points, Name):
+        self.root = Horse(Points, Name)
 
-    def __RecursiveAddition(self, Node, Time, Name):
-        if Time < Node.Time:
+    def __RecursiveAddition(self, Node, Points, Name):
+        if Points < Node.Points:
             if Node.Left is None:
-                Node.Left = Horse(Time, Name)
+                Node.Left = Horse(Points, Name)
             else:
-                self.__RecursiveAddition(Node.Left, Time, Name)
+                self.__RecursiveAddition(Node.Left, Points, Name)
         else:
             if Node.Right is None:
-                Node.Right = Horse(Time, Name)
+                Node.Right = Horse(Points, Name)
             else:
-                self.__RecursiveAddition(Node.Right, Time, Name)
+                self.__RecursiveAddition(Node.Right, Points, Name)
 
     def __OrderRecursive(self, Node):
         if Node is not None:
             self.__OrderRecursive(Node.Right)
-            print(Node.Name, ": ", Node.Time)
+            print(Node.Name, ": ", Node.Points, "pts")
             self.__OrderRecursive(Node.Left)
     
-    def __Search(self, node, Time):
+    def __Search(self, node, Points):
         if node is None:
             return None
-        if node.Time == Time:
+        if node.Points == Points:
             return node
-        if Time < node.Time:
-            return self.__Search(node.Left, Time)
+        if Points < node.Points:
+            return self.__Search(node.Left, Points)
         else:
-            return self.__Search(node.Right, Time)
+            return self.__Search(node.Right, Points)
 
-    def Add(self, Time, Name):
-        self.__RecursiveAddition(self.root, Time, Name)
+    def Add(self, Points, Name):
+        self.__RecursiveAddition(self.root, Points, Name)
 
     def OrderedPrint(self):
         print("Ordered Horse Tree: ")
         self.__OrderRecursive(self.root)
         print("")
 
-    def Search(self, Time):
-        return self.__Search(self.root, Time)
+    def Search(self, Points):
+        return self.__Search(self.root, Points)
